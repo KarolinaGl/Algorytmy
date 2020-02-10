@@ -5,7 +5,7 @@ namespace SinglyLinkedListStack
     {
         static void Main(string[] args)
         {
-
+            //
         }
     }
 }
