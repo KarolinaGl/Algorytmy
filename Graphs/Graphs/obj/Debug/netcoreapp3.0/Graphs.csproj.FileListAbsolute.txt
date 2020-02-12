@@ -1,0 +1,11 @@
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\bin\Debug\netcoreapp3.0\Graphs.exe
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\bin\Debug\netcoreapp3.0\Graphs.deps.json
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\bin\Debug\netcoreapp3.0\Graphs.runtimeconfig.json
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\bin\Debug\netcoreapp3.0\Graphs.runtimeconfig.dev.json
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\bin\Debug\netcoreapp3.0\Graphs.dll
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\bin\Debug\netcoreapp3.0\Graphs.pdb
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\obj\Debug\netcoreapp3.0\Graphs.csprojAssemblyReference.cache
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\obj\Debug\netcoreapp3.0\Graphs.AssemblyInfoInputs.cache
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\obj\Debug\netcoreapp3.0\Graphs.AssemblyInfo.cs
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\obj\Debug\netcoreapp3.0\Graphs.dll
+C:\Users\karol\OneDrive\Pulpit\algo\Graphs\Graphs\obj\Debug\netcoreapp3.0\Graphs.pdb
