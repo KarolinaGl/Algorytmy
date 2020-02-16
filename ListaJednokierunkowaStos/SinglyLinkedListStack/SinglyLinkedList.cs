@@ -16,25 +16,37 @@ namespace SinglyLinkedListStack
 
     public class SinglyLinkedList<T>
     {
-        private Node<T> list;
+        private Node<T> head;
+        private Node<T> tail;
 
         public SinglyLinkedList()
         {
-            list = null;
+            head = null;
+            tail = null;
         }
 
         // O(1)
         public void AddAtTheFront(T Data)
         {
-            Node<T> newNode = new Node<T>(Data);
-            newNode.nextNode = list;
-            list = newNode;
+            if (head == null)
+            {
+                Node<T> newNode = new Node<T>(Data);
+                newNode.nextNode = head;
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                Node<T> newNode = new Node<T>(Data);
+                newNode.nextNode = head;
+                head = newNode;
+            }
         }
 
         // O(n)
         public void PrintList()
         {
-            Node<T> currentNode = list;
+            Node<T> currentNode = head;
             while (currentNode != null)
             {
                 Console.WriteLine(currentNode.data);
@@ -45,16 +57,18 @@ namespace SinglyLinkedListStack
         // O(1)
         public bool IsEmpty()
         {
-            return list == null;
+            return head == null;
         }
 
         // O(1)
         public T DeleteFirstNode()
         {
-            Node<T> firstNode = list;
+            Node<T> firstNode = head;
             if (firstNode != null)
             {
-                list = firstNode.nextNode;
+                head = firstNode.nextNode;
+                if (head == null)
+                    tail = null;
                 return firstNode.data;
             }
             return default(T);
@@ -63,12 +77,13 @@ namespace SinglyLinkedListStack
         // O(n)
         public T DeleteLastNode()
         {
-            Node<T> currentNode = list;
-            if (list == null)
+            Node<T> currentNode = head;
+            if (head == null)
                 return default(T);
             else if (currentNode.nextNode == null)
             {
-                list = null;
+                head = null;
+                tail = null;
                 return currentNode.data;
             }
             else
@@ -78,6 +93,7 @@ namespace SinglyLinkedListStack
                 {
                     previousNode = currentNode;
                     currentNode = currentNode.nextNode;
+                    tail = previousNode;
                 }
                 previousNode.nextNode = null;
                 return currentNode.data;
@@ -88,15 +104,19 @@ namespace SinglyLinkedListStack
         public void AddAtTheEnd(T Dane)
         {
             Node<T> newNode = new Node<T>(Dane);
-            Node<T> currentNode = list;
+            Node<T> currentNode = head;
             if (currentNode != null)
             {
                 while (currentNode.nextNode != null)
                     currentNode = currentNode.nextNode;
                 currentNode.nextNode = newNode;
+                tail = newNode;
             }
             else
-                list = newNode;
+            {
+                head = newNode;
+                tail = newNode;
+            }
         }
 
         // optymistyczna O(1)
@@ -104,8 +124,8 @@ namespace SinglyLinkedListStack
         // średnia O(n)
         public T GetNode(int Index)
         {
-            Node<T> currentNode = list;
-            if (list == null)
+            Node<T> currentNode = head;
+            if (head == null)
                 throw new IndexOutOfRangeException();
             for (int i = 0; i < Index; i++)
             {
