@@ -16,13 +16,20 @@ namespace SinglyLinkedListStack
 
     public class SinglyLinkedList<T>
     {
-        private Node<T> head;
-        private Node<T> tail;
+        public Node<T> head;
+        public Node<T> tail;
 
         public SinglyLinkedList()
         {
             head = null;
             tail = null;
+        }
+
+        public T GetLastNode()
+        {
+            if (tail != null)
+                return tail.data;
+            return default;
         }
 
         // O(1)
@@ -71,7 +78,7 @@ namespace SinglyLinkedListStack
                     tail = null;
                 return firstNode.data;
             }
-            return default(T);
+            return default;
         }
 
         // O(n)
@@ -79,7 +86,7 @@ namespace SinglyLinkedListStack
         {
             Node<T> currentNode = head;
             if (head == null)
-                return default(T);
+                return default;
             else if (currentNode.nextNode == null)
             {
                 head = null;

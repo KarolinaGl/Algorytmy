@@ -9,3 +9,14 @@ C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowa\ListaJednokierunkowa\ob
 C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowa\ListaJednokierunkowa\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.AssemblyInfo.cs
 C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowa\ListaJednokierunkowa\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.dll
 C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowa\ListaJednokierunkowa\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.pdb
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\bin\Debug\netcoreapp3.0\SinglyLinkedListStack.exe
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\bin\Debug\netcoreapp3.0\SinglyLinkedListStack.deps.json
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\bin\Debug\netcoreapp3.0\SinglyLinkedListStack.runtimeconfig.json
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\bin\Debug\netcoreapp3.0\SinglyLinkedListStack.runtimeconfig.dev.json
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\bin\Debug\netcoreapp3.0\SinglyLinkedListStack.dll
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\bin\Debug\netcoreapp3.0\SinglyLinkedListStack.pdb
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.csprojAssemblyReference.cache
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.AssemblyInfoInputs.cache
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.AssemblyInfo.cs
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.dll
+C:\Users\karol\OneDrive\Pulpit\algo\ListaJednokierunkowaStos\SinglyLinkedListStack\obj\Debug\netcoreapp3.0\SinglyLinkedListStack.pdb
