@@ -35,19 +35,24 @@ namespace SinglyLinkedListStack
         // O(1)
         public void AddAtTheFront(T Data)
         {
+            Node<T> newNode = new Node<T>(Data);
+            newNode.nextNode = head;
+            if (head == null)
+                tail = newNode;
+            head = newNode;
+        }
+
+        // O(1)
+        public void AddAtTheEnd(T Dane)
+        {
+            Node<T> newNode = new Node<T>(Dane);
             if (head == null)
             {
-                Node<T> newNode = new Node<T>(Data);
-                newNode.nextNode = head;
                 head = newNode;
                 tail = newNode;
             }
-            else
-            {
-                Node<T> newNode = new Node<T>(Data);
-                newNode.nextNode = head;
-                head = newNode;
-            }
+            tail.nextNode = newNode;
+            tail = newNode;
         }
 
         // O(n)
@@ -104,25 +109,6 @@ namespace SinglyLinkedListStack
                 }
                 previousNode.nextNode = null;
                 return currentNode.data;
-            }
-        }
-
-        // O(n)
-        public void AddAtTheEnd(T Dane)
-        {
-            Node<T> newNode = new Node<T>(Dane);
-            Node<T> currentNode = head;
-            if (currentNode != null)
-            {
-                while (currentNode.nextNode != null)
-                    currentNode = currentNode.nextNode;
-                currentNode.nextNode = newNode;
-                tail = newNode;
-            }
-            else
-            {
-                head = newNode;
-                tail = newNode;
             }
         }
 

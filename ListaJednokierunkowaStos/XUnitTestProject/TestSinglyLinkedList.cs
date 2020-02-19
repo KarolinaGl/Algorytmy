@@ -38,6 +38,7 @@ namespace XUnitTestProject
         public void TestAddAtTheEnd()
         {
             SinglyLinkedList<char> sut = new SinglyLinkedList<char>();
+            Assert.Equal(default, sut.GetLastNode());
             sut.AddAtTheEnd('c');
             Assert.Equal('c', sut.GetLastNode());
             sut.AddAtTheEnd('b');
