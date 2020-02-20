@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Graphs
 {
@@ -27,20 +28,71 @@ namespace Graphs
             }
         }
 
-        static void Main(string[] args)
+        static void MatrixRepresentation()
         {
             int vertices = ReadInt();
             int edges = ReadInt();
 
             int[,] matrix = new int[vertices + 1, vertices + 1];
 
-            for(int i = 0; i < edges; i++)
+            for (int i = 0; i < edges; i++)
             {
                 int[] arguments = ReadInts();
                 matrix[arguments[0], arguments[1]] = 1;
                 matrix[arguments[1], arguments[0]] = 1;
             }
             PrintArray(matrix);
+        }
+
+        static void PrintArrayOfLists(List<int>[] lists)
+        {
+            for (int i = 1; i < lists.Length; i++)
+            {
+                Console.Write(i + ": ");
+                for (int j = 0; j < lists[i].Count; j++)
+                    Console.Write(lists[i][j] + " ");
+                Console.WriteLine();
+            }
+        }
+
+        static void DepthFirstSearch(int currentNode, List<int>[] lists, bool[] visitedNodes, ref int counter)
+        {
+            counter++;
+            visitedNodes[currentNode] = true;
+            Console.WriteLine("Odwiedzono wierzchołek " + currentNode);
+            for (int i = 0; i < lists[currentNode].Count; i++)
+                if (visitedNodes[lists[currentNode][i]] == false)
+                    DepthFirstSearch(lists[currentNode][i], lists, visitedNodes, ref counter);
+        }
+
+        static bool IsConnected(int vertices, List<int>[] lists)
+        {
+            int rootNode = 1;
+            int counter = 0;
+
+            bool[] visitedNodes = new bool[vertices + 1];
+
+            DepthFirstSearch(rootNode, lists, visitedNodes, ref counter);
+            Console.WriteLine(counter + " " + vertices);
+            return counter == vertices;
+        }
+
+        static void Main(string[] args)
+        {
+            int vertices = ReadInt();
+            int edges = ReadInt();
+
+            List<int>[] lists = new List<int>[vertices + 1];
+            for (int i = 1; i < vertices + 1; i++)
+                lists[i] = new List<int>();
+            for (int i = 0; i < edges; i++)
+            {
+                int[] arguments = ReadInts();
+                lists[arguments[0]].Add(arguments[1]);
+                lists[arguments[1]].Add(arguments[0]);
+            }
+
+            Console.WriteLine(IsConnected(vertices, lists));
         }
     }
 }
