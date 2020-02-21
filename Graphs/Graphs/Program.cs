@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SinglyLinkedListStack;
+using System;
 using System.Collections.Generic;
 
 namespace Graphs
@@ -65,6 +66,27 @@ namespace Graphs
                     DepthFirstSearch(lists[currentNode][i], lists, visitedNodes, ref counter);
         }
 
+        static void DepthFirstSearchUsingStack(int vertices, List<int>[] lists)
+        {
+            int rootNode = 1;
+            int currentNode = rootNode;
+            bool[] visitedNodes = new bool[vertices + 1];
+            SinglyLinkedListStack<int> stack = new SinglyLinkedListStack<int>();
+            stack.Push(rootNode);
+            while (stack.IsEmpty() == false)
+            {
+                currentNode = stack.Pop();
+                if (visitedNodes[currentNode] == false)
+                {
+                    visitedNodes[currentNode] = true;
+                    Console.WriteLine("Odwiedzono wierzchołek " + currentNode);
+                    for (int i = 0; i < lists[currentNode].Count; i++)
+                        if (visitedNodes[lists[currentNode][i]] == false)
+                            stack.Push(lists[currentNode][i]);
+                }
+            }
+        }
+
         static bool IsConnected(int vertices, List<int>[] lists)
         {
             int rootNode = 1;
@@ -91,8 +113,9 @@ namespace Graphs
                 lists[arguments[0]].Add(arguments[1]);
                 lists[arguments[1]].Add(arguments[0]);
             }
-
             Console.WriteLine(IsConnected(vertices, lists));
+            Console.WriteLine();
+            DepthFirstSearchUsingStack(vertices, lists);
         }
     }
 }
