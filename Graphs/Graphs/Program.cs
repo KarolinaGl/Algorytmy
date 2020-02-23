@@ -99,8 +99,63 @@ namespace Graphs
             return counter == vertices;
         }
 
+        static void BreadthFirstSearch(int vertices, List<int>[] lists)
+        {
+            int rootNode = 1;
+            int currentNode = rootNode;
+            bool[] visitedNodes = new bool[vertices + 1];
+            SinglyLinkedListQueue<int> queue = new SinglyLinkedListQueue<int>();
+            queue.Push(rootNode);
+            while (queue.IsEmpty() == false)
+            {
+                currentNode = queue.Pop();
+                if (visitedNodes[currentNode] == false)
+                {
+                    visitedNodes[currentNode] = true;
+                    Console.WriteLine("Odwiedzono wierzchołek " + currentNode);
+                    for (int i = 0; i < lists[currentNode].Count; i++)
+                        if (visitedNodes[lists[currentNode][i]] == false)
+                            queue.Push(lists[currentNode][i]);
+                }
+            }
+        }
+
+        static void ShortestPathInGraphWithoutWeight(int vertices, List<int>[] lists, int rootNode)
+        {
+            int currentNode = rootNode;
+            bool[] visitedNodes = new bool[vertices + 1];
+            int[] distances = new int[vertices + 1];
+            int[] previous = new int[vertices + 1];
+            for (int i = 1; i < vertices + 1; i++)
+                distances[i] = -1;
+            SinglyLinkedListQueue<int> queue = new SinglyLinkedListQueue<int>();
+            queue.Push(rootNode);
+            previous[rootNode] = rootNode;
+            while (queue.IsEmpty() == false)
+            {
+                currentNode = queue.Pop();
+                if (visitedNodes[currentNode] == false)
+                {
+                    visitedNodes[currentNode] = true;
+                    distances[currentNode] = distances[previous[currentNode]] + 1;
+                    for (int i = 0; i < lists[currentNode].Count; i++)
+                        if (previous[lists[currentNode][i]] == 0)
+                        {
+                            queue.Push(lists[currentNode][i]);
+                            previous[lists[currentNode][i]] = currentNode;
+                        }
+                }
+            }
+            for (int i = 1; i < vertices + 1; i++)
+                Console.Write(distances[i] + " ");
+            Console.WriteLine();
+            for (int i = 1; i < vertices + 1; i++)
+                Console.Write(previous[i] + " ");
+        }
+
         static void Main(string[] args)
         {
+            
             int vertices = ReadInt();
             int edges = ReadInt();
 
@@ -113,9 +168,7 @@ namespace Graphs
                 lists[arguments[0]].Add(arguments[1]);
                 lists[arguments[1]].Add(arguments[0]);
             }
-            Console.WriteLine(IsConnected(vertices, lists));
-            Console.WriteLine();
-            DepthFirstSearchUsingStack(vertices, lists);
+            ShortestPathInGraphWithoutWeight(vertices, lists, 6);
         }
     }
 }
